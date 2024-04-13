@@ -18,4 +18,11 @@ describe('Given a function to validate a correct combination of symbols,', () =>
       `input should either contain any of the following symbols: "(), [], {}" or be empty`,
     );
   });
+
+  describe('when the function receives a valid string,', () => {
+    test('if the string is empty, then it should return true', () => {
+      const emptyString = '';
+      expect(validateSymbolCombination(emptyString)).toBe(true);
+    });
+  });
 });
