@@ -11,4 +11,6 @@ const validateInputContent = (input: string): string | undefined => {
 export const validateSymbolCombination = (symbolCombination: string) => {
   if (validateInputContent(symbolCombination))
     return validateInputContent(symbolCombination);
+
+  return true;
 };
