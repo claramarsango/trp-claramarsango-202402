@@ -11,4 +11,11 @@ describe('Given a function to validate a correct combination of symbols,', () =>
       'input must be a string',
     );
   });
+
+  test('when the function receives an invalid string, then it should return an error message', () => {
+    const invalidString = 'invalid';
+    expect(validateSymbolCombination(invalidString)).toBe(
+      `input should either contain any of the following symbols: "(), [], {}" or be empty`,
+    );
+  });
 });
