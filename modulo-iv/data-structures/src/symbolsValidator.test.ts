@@ -29,5 +29,10 @@ describe('Given a function to validate a correct combination of symbols,', () =>
       const invalidCombination = ']';
       expect(validateSymbolCombination(invalidCombination)).toBe(false);
     });
+
+    test('if the string only contains an opening symbol, then it should return false', () => {
+      const invalidCombination = '[';
+      expect(validateSymbolCombination(invalidCombination)).toBe(false);
+    });
   });
 });
