@@ -8,11 +8,28 @@ const validateInputContent = (input: string): string | undefined => {
   }
 };
 
+class Stack {
+  #elements: string[] = [];
+
+  isEmpty(): boolean {
+    return this.#elements.length === 0;
+  }
+}
+
 export const validateSymbolCombination = (
   symbolCombination: string,
 ): boolean | string | undefined => {
   if (validateInputContent(symbolCombination)) {
     return validateInputContent(symbolCombination);
+  }
+
+  const stack = new Stack();
+  const closingSymbols = ')]}';
+
+  for (const symbol of symbolCombination) {
+    if (closingSymbols.includes(symbol)) {
+      if (stack.isEmpty()) return false;
+    }
   }
 
   return true;
