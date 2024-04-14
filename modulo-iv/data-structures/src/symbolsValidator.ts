@@ -26,6 +26,8 @@ export const validateSymbolCombination = (
   const stack = new Stack();
   const closingSymbols = ')]}';
 
+  if (symbolCombination.length === 1) return false;
+
   for (const symbol of symbolCombination) {
     if (closingSymbols.includes(symbol)) {
       if (stack.isEmpty()) return false;
