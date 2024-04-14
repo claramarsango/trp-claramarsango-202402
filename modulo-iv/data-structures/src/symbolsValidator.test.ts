@@ -24,5 +24,10 @@ describe('Given a function to validate a correct combination of symbols,', () =>
       const emptyString = '';
       expect(validateSymbolCombination(emptyString)).toBe(true);
     });
+
+    test('if the string only contains a closing symbol, then it should return false', () => {
+      const invalidCombination = ']';
+      expect(validateSymbolCombination(invalidCombination)).toBe(false);
+    });
   });
 });
