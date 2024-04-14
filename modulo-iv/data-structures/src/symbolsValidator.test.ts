@@ -34,5 +34,10 @@ describe('Given a function to validate a correct combination of symbols,', () =>
       const invalidCombination = '[';
       expect(validateSymbolCombination(invalidCombination)).toBe(false);
     });
+
+    test('if the string has more than one symbol but they are all closing ones, then it should return false', () => {
+      const invalidCombination = ')]}';
+      expect(validateSymbolCombination(invalidCombination)).toBe(false);
+    });
   });
 });
